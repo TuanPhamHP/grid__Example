@@ -1,0 +1,281 @@
+* {
+  text-align: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  row-gap: 10px;
+  -ms-grid-columns: (minmax(100px, auto))[3];
+      grid-template-columns: repeat(3, minmax(100px, auto));
+  -ms-grid-rows: (minmax(200px, auto))[3];
+      grid-template-rows: repeat(3, minmax(200px, auto));
+}
+
+.wrapper div {
+  padding: 30px;
+  background: #3bbced;
+}
+
+.wrapper div:nth-child(even) {
+  background: #677b7c;
+}
+
+.wrapper2 {
+  text-align: center;
+  margin: 40px auto;
+  display: -ms-grid;
+  display: grid;
+  max-width: 1024px;
+  gap: 10px;
+  -ms-grid-rows: (minmax(150px, auto))[3];
+      grid-template-rows: repeat(3, minmax(150px, auto));
+  -ms-grid-columns: (minmax(150px, auto))[3];
+      grid-template-columns: repeat(3, minmax(150px, auto));
+  -ms-grid-rows: (minmax(150px, auto))[5];
+      grid-template-rows: repeat(5, minmax(150px, auto));
+  -ms-grid-columns: (minmax(150px, auto))[6];
+      grid-template-columns: repeat(6, minmax(150px, auto));
+}
+
+.wrapper2 div {
+  background-color: #75cde7;
+}
+
+.wrapper2 div:nth-child(even) {
+  background-color: #7c9e9e;
+}
+
+.wrapper2 .one {
+  grid-column: span 2;
+}
+
+.wrapper2 .two {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 4;
+  grid-column: 3/7;
+}
+
+.wrapper2 .three {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  grid-row: 2/5;
+}
+
+.wrapper2 .four {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4/7;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  grid-row: 2/5;
+}
+
+.wrapper2 .five {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5/6;
+  z-index: 1;
+}
+
+.wrapper2 .six {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5/6;
+}
+
+.wrapper3 {
+  text-align: center;
+  margin: 40px auto;
+  display: -ms-grid;
+  display: grid;
+  max-width: 1024px;
+  gap: 10px;
+  -ms-grid-rows: (minmax(150px, auto))[3];
+      grid-template-rows: repeat(3, minmax(150px, auto));
+  -ms-grid-columns: (minmax(150px, auto))[3];
+      grid-template-columns: repeat(3, minmax(150px, auto));
+}
+
+.wrapper3 div {
+  background-color: #75cde7;
+}
+
+.wrapper3 div:nth-child(even) {
+  background-color: #7c9e9e;
+}
+
+.wrapper3 .four {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  text-align: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
+
+.wrapper3 .four p {
+  padding: 10px;
+  border: 1px solid white;
+  margin: 10px;
+}
+
+.wrapper4 {
+  text-align: center;
+  margin: 40px auto;
+  display: -ms-grid;
+  display: grid;
+  max-width: 1024px;
+  gap: 10px;
+  -ms-grid-rows: (minmax(150px, auto))[3];
+      grid-template-rows: repeat(3, minmax(150px, auto));
+  -ms-grid-columns: (minmax(150px, auto))[3];
+      grid-template-columns: repeat(3, minmax(150px, auto));
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  justify-items: center;
+}
+
+.wrapper4 div {
+  background-color: #75cde7;
+}
+
+.wrapper4 div:nth-child(even) {
+  background-color: #7c9e9e;
+}
+
+.wrapper4 div {
+  padding: 30px;
+}
+
+.wrapper4 .one {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.wrapper4 .two {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.wrapper4 .three {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.wrapper5 {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  text-align: center;
+  max-width: 1024px;
+  margin: 0 auto;
+  -ms-grid-columns: (minmax(80px, auto))[12];
+      grid-template-columns: repeat(12, minmax(80px, auto));
+  gap: 6px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.wrapper5 :nth-child(n) {
+  padding: 20px;
+  background-color: #75cde7;
+}
+
+.wrapper5 header {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+}
+
+.wrapper5 main {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 8;
+  grid-column: 5/13;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  grid-row: 2/5;
+}
+
+.wrapper5 aside {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
+}
+
+.wrapper5 section {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5/7;
+}
+
+.wrapper5 nav {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3/5;
+}
+
+.wrapper5 footer {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+}
+
+.wrapper5 .gridline {
+  display: -ms-grid;
+  display: grid;
+  position: absolute;
+  max-width: 1024px;
+  -ms-grid-columns: (minmax(80px, auto))[12];
+      grid-template-columns: repeat(12, minmax(80px, auto));
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0px;
+  background: transparent;
+}
+
+.wrapper5 .gridline p {
+  margin: 0px;
+  border: 1px solid;
+  background: #000;
+  opacity: 0.2;
+  visibility: hidden;
+}
+
+input:checked + .gridline {
+  display: none;
+}
+/*# sourceMappingURL=grid.css.map */

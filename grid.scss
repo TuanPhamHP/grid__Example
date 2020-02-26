@@ -1,0 +1,172 @@
+@mixin defaultgrid {
+    text-align: center;
+    margin: 40px auto;
+    display: grid;
+    max-width: 1024px;
+    gap: 10px;
+    grid-template-rows:repeat(3,minmax(150px,auto));
+    grid-template-columns: repeat(3,minmax(150px,auto));
+    div{
+        background-color: rgb(117, 205, 231);
+    }
+    div:nth-child(even){
+        background-color: rgb(124, 158, 158);
+    }
+}
+*{
+    text-align: center;
+}
+.wrapper{
+    margin: 0 auto;
+    max-width: 1280px;
+    display: grid;
+    grid-gap: 10px;
+    row-gap: 10px;
+    // gap: 10px; // if ur gap in both direction is the same u can use this one instead
+    // grid-template-columns: 15% 20% 45% 20%;
+    // grid-template-columns: 1fr 2fr 4fr 2fr; //fr is thing that have same effect as flex grow
+    // grid-template-columns: repeat(3,1fr); // repeat(solanrepeat,donvirepeat)
+    grid-template-columns: repeat(3,minmax(100px,auto)); // u can use the minmax function to set the size of columns instead.
+    grid-template-rows: repeat(3,minmax(200px,auto));// the same thing with the columns repeat
+    // grid-auto-rows: minmax(150px,auto);  //grid-auto-rows: minmax(minheight,maxheight);
+    div{
+        padding: 30px;
+        background: #3bbced;
+
+    }
+    div:nth-child(even){
+        background: rgb(103, 123, 124);
+        
+    }
+}
+.wrapper2{
+@include defaultgrid();
+    grid-template-rows:repeat(5,minmax(150px,auto));
+    grid-template-columns: repeat(6,minmax(150px,auto));
+
+    .one{
+        // grid-column-start: 1;
+        // grid-column-end: 3;
+        // grid-column: 1/3; // instead of 2 lines that on top u can use this one to do the same thing 
+        grid-column: span 2; // mean that explore 2 more row from ended rows default
+    }
+    .two{
+        grid-column: 3/7;
+    }
+    .three{
+        grid-column: 1/4;
+        grid-row: 2/5;
+    }
+    .four{
+        grid-column: 4/7;
+        grid-row: 2/5;
+    }
+    .five{
+        grid-column: 2/7;
+        grid-row: 5/6;
+        z-index: 1;
+    }
+    .six{
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+}
+.wrapper3{
+@include defaultgrid();
+    .four{
+        display: grid;
+        // grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        text-align: center;
+        grid-column: 1/4;
+        
+        p{
+            padding: 10px;
+            border: 1px solid white;
+            margin: 10px;
+            
+        }
+    }
+}
+.wrapper4{
+    @include defaultgrid();
+    align-items: start;// for up and down (Y direct) items
+    justify-items: center; //for right and lef (X direct) items
+    //or u can direct the items themselve by using justify-self:;
+    div{
+        padding: 30px;
+    }
+    .one{
+        justify-self: end;
+        align-self: end;
+        
+    }
+    .two{
+        justify-self: center;
+        align-self:center;
+    }
+    .three{
+        justify-self: start;
+        align-self: start;
+    }
+}
+.wrapper5{
+    display: grid;
+    position: relative;
+    text-align: center;
+    max-width: 1024px;
+    margin: 0 auto;
+    grid-template-columns: repeat(12,minmax(80px,auto));
+    gap: 6px;
+    grid-auto-rows: minmax(100px,auto);// define the size of rows
+    :nth-child(n){
+        padding: 20px;
+        background-color: rgb(117, 205, 231);
+    }
+    header{
+        grid-column: 1/13;
+    }
+    main{
+        grid-column: 5/13;
+        grid-row: 2/5;
+    }
+    aside{
+        grid-column: 1/5;
+    }
+    section{
+        grid-column: 1/13;
+        grid-row: 5/7;
+    }
+    nav{
+        grid-column: 1/5;
+        grid-row: 3/5;
+    }
+    footer{
+        grid-column: 1/13;
+    }
+    .gridline{
+        display: grid;
+        position: absolute;
+        max-width: 1024px;
+        grid-template-columns: repeat(12,minmax(80px,auto));
+        gap: 6px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: 0px;
+        background: transparent;
+        
+        p{
+            margin: 0px;
+            border: 1px solid;
+            background: #000;
+            opacity: 0.2;
+            visibility: hidden;
+        }
+    }
+}
+input:checked + .gridline{
+    display: none;
+}
